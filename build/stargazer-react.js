@@ -1,7 +1,8 @@
 var getGitHubPromise = function(name) {
   // Github token, see README
   var token = '';
-  return qwest.get('https://api.github.com/repos/'+ name +'?access_token='+token, {responseType: 'json'});
+  var tokenString = token.length > 0 ? '?access_token='+token : '';
+  return qwest.get('https://api.github.com/repos/'+ name + tokenString, {responseType: 'json'});
 };
 
 var Stars = React.createClass({displayName: "Stars",
