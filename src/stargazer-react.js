@@ -1,6 +1,6 @@
 var getGitHubPromise = function(name) {
-  // Can use public access only token, It's only there to avoid api call throttling.
-  var token = '24069275f8aa53936db6e6cafc0f425f0de702ae';
+  // Github token, see README
+  var token = '';
   return qwest.get('https://api.github.com/repos/'+ name +'?access_token='+token, {responseType: 'json'});
 };
 
