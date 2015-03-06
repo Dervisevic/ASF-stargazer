@@ -1,0 +1,31 @@
+html, body {
+    overflow: hidden;
+    background: #000;
+    padding: 0px; margin: 0px;
+    width: 100%; height: 100%;
+}
+.fullScreen {
+    height: 100%;
+    color:rgb(252,223,43);
+}
+
+.stars {
+  font-size: 350px;
+}
+
+.box {
+  width: 400px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+#content {
+  text-align: center;
+}
+
+#wrapper {
+  position: fixed;
+  top: 20%;
+  width: 100%;
+  height:300px;
+}

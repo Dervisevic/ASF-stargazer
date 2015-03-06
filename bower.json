@@ -1,0 +1,29 @@
+{
+  "name": "ASF-stargazer",
+  "version": "0.2.0",
+  "homepage": "https://github.com/Dervisevic/ASF-stargazer",
+  "authors": [
+    "Denis Dervisevic <denis@dervisevic.se>"
+  ],
+  "description": "React based stargazing on github",
+  "main": "build/stargazer-react.js",
+  "keywords": [
+    "stargazer",
+    "react",
+    "asf"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.2",
+    "react": "~0.12.2",
+    "qwest": "~1.5.7"
+  }
+}
