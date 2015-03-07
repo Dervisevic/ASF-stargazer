@@ -1,7 +1,6 @@
+// Returns a promise with the response for the API request.
 var getGitHubPromise = function(name) {
-  // Github token, see README
-  var token = '';
-  var tokenString = token.length > 0 ? '?access_token='+token : '';
+  var tokenString = config.token.length > 0 ? '?access_token='+config.token : '';
   return qwest.get('https://api.github.com/repos/'+ name + tokenString, {responseType: 'json'});
 };
 
@@ -17,14 +16,18 @@ var Stars = React.createClass({
     });
   },
   render: function() {
+    var compare = [];
+    var that = this;
+    config.compare.forEach(function(elem) {
+      compare.push(<Compare user={elem.user} repo={elem.repo} compareTo={that.state.stargazers}/>);
+    });
     return (
       <div>
         <h1>{this.props.user}/{this.props.repo}</h1>
         <h1 className='stars'>{this.state.stargazers}</h1>
         <div className="box">
           <h2>{parseInt(this.props.goal)-this.state.stargazers} ★ remaining until {this.props.goal}</h2>
-          <Compare user="formly-js" repo="angular-formly" compareTo={this.state.stargazers} />
-          <Compare user="joshfire" repo="jsonform" compareTo={this.state.stargazers} />
+          {compare}
         </div>
 
       </div>
@@ -50,4 +53,7 @@ var Compare = React.createClass({
   }
 });
 
-React.render(<Stars user="Textalk" repo="angular-schema-form" goal="1000" />, document.getElementById('content'));
+React.render(
+  <Stars user={config.source.user} repo={config.source.repo} goal={config.source.goal} />,
+  document.getElementById('content')
+);
