@@ -23,7 +23,7 @@ var Stars = React.createClass({displayName: "Stars",
     });
     return (
       React.createElement("div", null, 
-        React.createElement("h1", null, this.props.user, "/", this.props.repo), 
+        React.createElement("h1", null, this.props.repo), 
         React.createElement("h1", {className: "stars"}, this.state.stargazers), 
         React.createElement("div", {className: "box"}, 
           React.createElement("h2", null, parseInt(this.props.goal)-this.state.stargazers, " ★ remaining until ", this.props.goal), 

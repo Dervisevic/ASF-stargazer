@@ -23,7 +23,7 @@ var Stars = React.createClass({
     });
     return (
       <div>
-        <h1>{this.props.user}/{this.props.repo}</h1>
+        <h1>{this.props.repo}</h1>
         <h1 className='stars'>{this.state.stargazers}</h1>
         <div className="box">
           <h2>{parseInt(this.props.goal)-this.state.stargazers} ★ remaining until {this.props.goal}</h2>
